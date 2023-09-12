@@ -184,7 +184,7 @@
 
   <script>
     //get request to get all teachers
-    var url = "http://192.168.100.74:8081/teacher/all";
+    var url = "http://" + window.location.host + ":8081/teacher/all";
     var cardContainer = document.getElementById("cardContainer");
     fetch(url)
       .then(response => response.json())
@@ -268,7 +268,7 @@
         var jsonData = JSON.stringify(data);
 
         // Configure the request
-        fetch('http://192.168.100.74:8081/teacher', {
+        fetch('http://' + window.location.host + ':8081/teacher', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json' // Set the Content-Type header to indicate JSON data
@@ -302,7 +302,7 @@
       function removeCard(button) {
             var parentDiv = button.parentNode;
             var id = parentDiv.id;
-            const url = 'http://192.168.100.74:8081/teacher?id='+id;
+            const url = 'http://' + window.location.host + ':8081/teacher?id='+id;
             fetch(url, {
               method: 'DELETE',
               headers: {
@@ -337,7 +337,7 @@
         editForm.classList.remove("hidden")
         
         document.getElementById("nonEditableField").value = id
-        const url = 'http://192.168.100.74:8081/teacher?id='+id;
+        const url = 'http://' + window.location.host + ':8081/teacher?id='+id;
       }
 
       function hideForm(){
@@ -354,7 +354,7 @@
         var jsonData = JSON.stringify(data);
 
         // Configure the request
-        fetch('http://192.168.100.74:8081/teacher', {
+        fetch('http://' + window.location.host + ':8081/teacher', {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json' // Set the Content-Type header to indicate JSON data
